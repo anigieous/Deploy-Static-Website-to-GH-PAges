@@ -15,7 +15,7 @@ inputs:
     default: true
     required: false
     description: "Update Repository description with url to website"
-  token:
+  GITHUB_TOKEN:
    required: true
    description: "token"
     
@@ -55,7 +55,7 @@ runs:
       if: ${{ inputs.updateDescription == 'true' }}
       uses: actions/github-script@v5
       with:
-        github-token: ${{inputs.token}}
+        github-token: ${{inputs.GITHUB_TOKEN}}
         script: |
           const repo = context.repo;
           const url = "https://repo.owner.github.io/repo.repo/";
