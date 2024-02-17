@@ -15,9 +15,6 @@ inputs:
     default: true
     required: false
     description: "Update Repository description with url to website"
-  GITHUB_TOKEN:
-   required: true
-   description: "token"
     
 runs:
   using: "composite" 
