@@ -23,6 +23,10 @@ os.chdir('repo')
 # Create a new branch if it doesn't exist and switch to it
 subprocess.run(["git", "checkout", "-b", "gh-pages"], check=True)
 
+output_dir = 'output'
+if not os.path.exists(output_dir):
+    os.makedirs(output_dir)
+
 # Step 2: Upload artifacts
 # This assumes that you have a directory called 'output' that contains the files you want to upload
 # Use ghp-import tool to move files into the gh-pages branch
