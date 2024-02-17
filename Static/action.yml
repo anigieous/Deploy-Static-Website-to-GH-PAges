@@ -1,0 +1,48 @@
+# Simple workflow for deploying static content to GitHub Pages
+name: Deploy static content to Pages
+description: "Deploy static Website to GitHub Pages"
+inputs:
+  repo_name:
+    required: true
+    default: ${{ github.repository }}
+    description: "Repo Name"
+  token:
+    required: true
+    description: "Github token"
+  updateDescription:
+    default: true
+    required: false
+    description: "Updates the repo Description url to the URL"
+    
+runs:
+  using: "composite" 
+  steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          # Uploading entire folder
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v3
+
+      - name: Update repository description
+        if: ${{ inputs.updateDescription == 'true' }}
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{inputs.token}}
+          script: |
+            const url = "${{ steps.deployment.outputs.page_url }}";
+            const repo = context.repo;
+            github.rest.repos.update({
+              owner: repo.owner,
+              repo: repo.repo,
+              homepage: `${url}`
+            });
