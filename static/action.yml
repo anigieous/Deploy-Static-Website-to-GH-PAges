@@ -33,6 +33,7 @@ runs:
         uses: actions/deploy-pages@v3
 
       - name: Update repository description
+        if: ${{ inputs.updateDescription == 'true' }}
         uses: actions/github-script@v5
         with:
           github-token: ${{inputs.token}}
