@@ -8,7 +8,8 @@ This action Deploys your static website and Dynamic code Github Pages.
 
 <!-- start usage -->
 ```yaml
-- uses: anigieous/Deploy-Website-to-GH-Pages/Static@version
+- name: Deploy to GitHub Pages
+  uses: anigieous/Deploy-Website-to-GH-Pages/Static@version
   with:
     # Repository name 
     # Default: ${{ github.repository }}
@@ -30,16 +31,17 @@ Make sure you have this script in your package.json file.
 
 <!-- start usage -->
 ```yaml
-- uses: anigieous/Deploy-Website-to-GH-Pages/Dynamic@version
-      with:
-        # GitHub Username for making commit
-        username: your_github_username
+- name: Deploy and Build
+  uses: anigieous/Deploy-Website-to-GH-Pages/Dynamic@version
+  with:
+    # GitHub Username for making commit
+    username: your_github_username
 
-        # Email for making commit
-        email: your_email_id
+    # Email for making commit
+    email: your_email_id
 
-        # you_personal_access_token for deploying your code
-        GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+    # you_personal_access_token for deploying your code
+    GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
 
 ```
 <!-- end usage -->
