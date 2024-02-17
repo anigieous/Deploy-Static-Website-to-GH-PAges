@@ -43,6 +43,7 @@ page_url = f"https://{user}.github.io/{repo_name}"
 repo.edit(homepage="page_url")
 
 # Clean up the cloned repository
-shutil.rmtree('repo')
+if os.path.exists('repo'):
+    shutil.rmtree('repo')
 
 print("::set-output name=page_url::" + page_url)
