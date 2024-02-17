@@ -9,9 +9,12 @@ inputs:
     required: true
     description: "Email"
   GITHUB_TOKEN:
-    default: true
     required: false
     description: "Token"
+  updateDescription:
+    default: true
+    required: false
+    description: "Update Repository description with url to website"
     
 runs:
   using: "composite" 
@@ -44,3 +47,17 @@ runs:
       run: |
         npm run deploy --token=${{ inputs.GITHUB_TOKEN }}
       shell: bash
+
+    - name: Update repository description
+        if: ${{ inputs.updateDescription == 'true' }}
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{inputs.token}}
+          script: |
+            const repo = context.repo;
+            const url = "https://repo.owner.github.io/repo.repo/";
+            github.rest.repos.update({
+              owner: repo.owner,
+              repo: repo.repo,
+              homepage: `${url}`
+            });
