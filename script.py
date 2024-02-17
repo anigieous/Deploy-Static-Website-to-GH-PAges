@@ -15,6 +15,9 @@ repo = g.get_repo(repo_name)
 # Clone the repository
 Repo.clone_from(repo.clone_url, 'repo')
 
+# Change the current working directory to the cloned repository
+os.chdir('repo')
+
 # Step 1: Setup pages
 # This assumes that you have a repository cloned locally and you're currently in its root directory
 # Create a new branch if it doesn't exist and switch to it
