@@ -55,7 +55,7 @@ runs:
         github-token: ${{inputs.GITHUB_TOKEN}}
         script: |
           const repo = context.repo;
-          const url = "https://repo.owner.github.io/repo.repo/";
+          const url = `https://${repo.owner}.github.io/${repo.repo}/`;
           github.rest.repos.update({
             owner: repo.owner,
             repo: repo.repo,
