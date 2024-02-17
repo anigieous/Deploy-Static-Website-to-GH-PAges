@@ -46,7 +46,7 @@ Make sure you have this script in your package.json file.
 ```
 <!-- end usage -->
 
-## Note*
+## Requirements
 ### For Deploying Static Website you should enable deploy from your Repository setting:
 Steps:
 - Move to Setting of your Repository.
