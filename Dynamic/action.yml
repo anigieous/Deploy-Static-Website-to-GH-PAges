@@ -15,6 +15,9 @@ inputs:
     default: true
     required: false
     description: "Update Repository description with url to website"
+  token:
+   required: true
+   description: "token"
     
 runs:
   using: "composite" 
