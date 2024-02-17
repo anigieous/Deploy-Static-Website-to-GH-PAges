@@ -30,6 +30,7 @@ if not os.path.exists(output_dir):
 # Step 2: Upload artifacts
 # This assumes that you have a directory called 'output' that contains the files you want to upload
 # Use ghp-import tool to move files into the gh-pages branch
+os.environ['GH_TOKEN'] = token
 subprocess.run(["ghp-import", "-n", "-p", "-f", "output"], check=True)
 
 # Step 3: Deploy to GitHub Pages
