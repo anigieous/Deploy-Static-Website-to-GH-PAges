@@ -12,7 +12,7 @@ This action Deploys your static website and Dynamic code Github Pages.
   with:
     # Repository name 
     # Default: ${{ github.repository }}
-    repo: ''
+    repo_name: ''
 
     # you_personal_access_token for deploying your code
     token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
