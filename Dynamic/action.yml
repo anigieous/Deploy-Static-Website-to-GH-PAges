@@ -22,20 +22,25 @@ runs:
     - name: Install Dependencies
       run: |
         npm install
+      shell: bash
 
     - name: Test the App
       run: |
         npm test
+      shell: bash
 
-    - name: BuildGeneration
+    - name: Build
       run: |
         npm run build
+      shell: bash
 
     - name: Configure Git
       run: |
         git config --local user.name ${{ inputs.username }}
         git config --local user.email ${{ inputs.email }}
+      shell: bash
 
     - name: Deploy
       run: |
         npm run deploy --token=${{ inputs.GITHUB_TOKEN }}
+      shell: bash
