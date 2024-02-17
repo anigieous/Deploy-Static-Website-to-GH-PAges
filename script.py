@@ -34,7 +34,7 @@ os.environ['GH_TOKEN'] = token
 subprocess.run(["ghp-import", "-n", "-p", "-f", "output", "-r", f"https://{os.environ['GH_TOKEN']}@github.com/{os.environ['REPO']}.git"], check=True)
 # Step 3: Deploy to GitHub Pages
 # Push the changes to remote gh-pages branch
-subprocess.run(["git", "push", "-f", "origin", "gh-pages"], check=True)
+subprocess.run(["git", "push", "-f", f"https://{token}@github.com/{repo_name}.git", "gh-pages"], check=True)
 
 user = repo.owner.login
 page_url = f"https://{user}.github.io/{repo_name}"
