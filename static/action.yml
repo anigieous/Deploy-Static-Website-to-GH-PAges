@@ -14,11 +14,7 @@ inputs:
     description: "Updates the repo Description url to the URL"
     
 runs:
-  using: "composite"
-  environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-      
+  using: "composite" 
   steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
