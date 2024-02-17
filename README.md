@@ -8,7 +8,7 @@ This action Deploys your static website and Dynamic code Github Pages.
 
 <!-- start usage -->
 ```yaml
-- uses: anigieous/Deploy-Static-Website-to-GH-PAges/static@version
+- uses: anigieous/Deploy-Website-to-GH-Pages/Static@version
   with:
     # Repository name 
     # Default: ${{ github.repository }}
@@ -25,7 +25,7 @@ This action Deploys your static website and Dynamic code Github Pages.
 
 <!-- start usage -->
 ```yaml
-- uses: anigieous/Deploy-Static-Website-to-GH-PAges/Dynamic@version
+- uses: anigieous/Deploy-Website-to-GH-Pages/Dynamic@version
       with:
         # GitHub Username for making commit
         username: your_github_username
