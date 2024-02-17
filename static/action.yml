@@ -4,6 +4,7 @@ description: "Deploy static Website to GitHub Pages"
 inputs:
   repo_name:
     required: true
+    default: ${{ github.repository }}
     description: "Repo Name"
   token:
     required: true
