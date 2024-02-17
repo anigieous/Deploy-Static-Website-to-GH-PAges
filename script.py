@@ -31,7 +31,7 @@ if not os.path.exists(output_dir):
 # This assumes that you have a directory called 'output' that contains the files you want to upload
 # Use ghp-import tool to move files into the gh-pages branch
 os.environ['GH_TOKEN'] = token
-subprocess.run(["ghp-import", "-n", "-p", "-f", "output"], check=True)
+subprocess.run(["ghp-import", "-n", "-p", "-f", "output", "-r", "https://${GH_TOKEN}@github.com/${REPO}.git"], check=True)
 
 # Step 3: Deploy to GitHub Pages
 # Push the changes to remote gh-pages branch
