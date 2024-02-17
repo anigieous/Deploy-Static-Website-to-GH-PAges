@@ -22,6 +22,11 @@ This action Deploys your static website and Dynamic code Github Pages.
 
 ### Deploy Dynamic Website to Github Pages
 #### It build your website first using npm and than deploys your code to GitHub Pages
+#### Note*
+Make sure you have this script in your package.json file.
+```
+"deploy": "gh-pages -d build -t -r https://$npm_config_token@github.com/your_username/your_repo_name.git"
+```
 
 <!-- start usage -->
 ```yaml
@@ -38,3 +43,17 @@ This action Deploys your static website and Dynamic code Github Pages.
 
 ```
 <!-- end usage -->
+
+## Note*
+### For Deploying Static Website you should enable deploy from your Repository setting:
+Steps:
+- Move to Setting of your Repository.
+- Move to Pages.
+- Select source as Github Action.
+
+### For Deploying Dynamic Website you should enable deploy from your Repository setting:
+Steps:
+- Move to Setting of your Repository.
+- Move to Pages.
+- Select source as Deploy from Branch.
+
