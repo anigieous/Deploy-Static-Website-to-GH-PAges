@@ -23,7 +23,7 @@ os.chdir('repo')
 # Create a new branch if it doesn't exist and switch to it
 subprocess.run(["git", "checkout", "-b", "gh-pages"], check=True)
 
-output_dir = 'output'
+output_dir = 'repo'
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 
