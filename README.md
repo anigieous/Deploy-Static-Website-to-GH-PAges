@@ -2,9 +2,9 @@
 
 This action Deploys your static website and Dynamic code Github Pages.
 
-# How to Setup this action in your Workflow:
+## How to Setup this action in your Workflow:
 
-## Deploy Static Website to Github Pages
+### Deploy Static Website to Github Pages
 
 <!-- start usage -->
 ```yaml
@@ -20,8 +20,8 @@ This action Deploys your static website and Dynamic code Github Pages.
 ```
 <!-- end usage -->
 
-## Deploy Dynamic Website to Github Pages
-## It build your website first using npm and than deploys your code to GitHub Pages
+### Deploy Dynamic Website to Github Pages
+#### It build your website first using npm and than deploys your code to GitHub Pages
 
 <!-- start usage -->
 ```yaml
